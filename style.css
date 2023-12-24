@@ -1,0 +1,419 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+    text-transform: uppercase;
+}
+
+.top {
+    position: fixed;
+    bottom: 0;
+    width: 50px;
+    height: 50px;
+    background-image: url(img/top.png);
+    background-size: cover;
+    margin-left: 20px;
+    margin-bottom: 40px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px green;
+    z-index: 5;
+}
+
+.top:hover {
+    box-shadow: 0 0 20px red;
+}
+
+/* Затемнение кнопок при наведении курсора на них*/
+
+.dark:hover {
+    filter: brightness(50%);
+    transition: all 0.5s;
+}
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.main {
+    height: 100vh;
+    position: relative;
+    color: white;
+    z-index: 6;
+}
+
+.center {
+    position: absolute;
+    top: calc(50% - 60px);
+    z-index: 7;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main__title,
+.main__subtitle {
+    margin: 0 0 16px 0;
+}
+
+.main__link {
+    background-color: orange;    
+    text-align: center;
+    border-radius: 15px;
+    border: 2px solid black;
+    padding: 10px 20px;
+    color: black;
+    font-weight: bold;
+}
+
+.link {
+    color: white;
+    font-size: 1.2em;
+}
+
+.link::after {
+    content: "";
+    transform: scaleX(0);
+    height: 2px;
+    background-color: red;
+    display: block;
+    transition: 0.5s;
+}
+
+.link:hover::after {
+    transform: scaleX(0.5);
+}
+
+.phone {
+    color: white;
+    font-size: 1.2em;
+}
+
+.phone::before {
+    content: "";
+    width: 17px;
+    height: 17px;
+    display: inline-block;
+    background-image: url(img/phone.png);
+    background-size: cover;
+}
+
+.phone_absolute {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    padding: 20px 20px 0 0;
+    text-align: center;
+}
+
+
+.lesson__title::before {
+    
+    content: "";
+    width: 45px;
+    height: 50px;
+    display: inline-block;
+    background-image: url(img/html5-logo.png);
+    background-size: cover;
+}
+
+.first {
+    background-image: url(img/i.webp);
+    background-size: cover;
+    background-position: right;
+    
+    height: 100vh;
+}
+
+.second {
+    background-image: url(img/ii.webp);
+    background-size: cover;
+    background-position: right;
+    
+    height: 100vh;
+}
+
+.third {
+    background-image: url(img/iii.webp);
+    background-size: cover;
+    background-position: right;
+    
+    height: 100vh;
+}
+
+.title {
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.brands {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brands__img {
+    width: 15%;
+    color: transparent;
+}
+
+/*Держатель кнопок: "Перейти в корзину", "Вернуться в каталог (домой)" */
+
+.holder { 
+    margin-bottom: 40px;
+    border-top: 2px solid #e0e0e0;
+    border-bottom: 2px solid #e0e0e0;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/*Div-блоки кнопок: "Перейти в корзину", "Вернуться в каталог (домой)" */
+
+.cart-div,
+.home-div {
+    background-color: orange;
+    width: 120px;
+    text-align: center;
+    border-radius: 15px;
+    border: 2px solid black;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #C2C1C6;
+}
+
+/* CSS-классы, относящиеся к оформлению карточек товаров на сайте*/
+
+.card {
+    width: 320px;
+    height: 213px;
+    padding: 1px;
+    position:relative;
+    overflow: hidden;
+}
+
+.card__bg {
+    position:absolute;
+    z-index: 4;
+    width: 100%;
+    height: 100%;    
+    transition: all 0.5s;
+}
+
+.card__info {
+    padding-left: 16px;
+    position:absolute;
+    z-index: 3;
+    color: white;
+    transition: all 0.5s;    
+}
+
+.selected {
+    color: white;
+    background-color: green;
+}
+
+.card:hover .card__bg{
+    filter: brightness(30%);
+    z-index: 2;
+    transform: scale(1.3);
+}
+
+.card_00 {
+    background-image: url(img/0.jpg);
+}
+
+.card_01 {
+    background-image: url(img/1.jpg);
+}
+
+.card_02 {
+    background-image: url(img/2.jpg);
+}
+
+.card_03 {
+    background-image: url(img/3.jpg);
+}
+
+.card_04 {
+    background-image: url(img/4.jpg);
+}
+
+.card_05 {
+    background-image: url(img/5.jpg);
+}
+
+.card_06 {
+    background-image: url(img/6.jpg);
+}
+
+.card_07 {
+    background-image: url(img/7.jpg);
+}
+
+/* конец CSS-классов, относящихся к оформлению карточек товаров на сайте*/
+
+/* CSS-классы, относящиеся к оформлению строк заказа на сайте*/
+
+.order {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.pad {
+    padding: 10px;
+}
+
+.order.pad:nth-child(2n) {
+    background-color: rgb(243, 240, 240);
+}
+
+.order.pad:nth-child(2n+1) {
+    background-color: rgb(218, 216, 216);
+}
+
+.order__img {
+    width: 160px;
+    margin-left: 20px;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+
+.order__img:hover {
+    transform: scale(1.2);
+}
+
+.order__name {
+    margin-left: 30px;
+}
+
+.order__price {
+    margin-right: 20px;
+}
+
+.total {
+    text-align: right;
+    margin-right: 30px;
+}
+
+/* конец CSS-классов, относящихся к оформлению строк заказа на сайте*/
+
+/* Оформление section#contacts*/
+
+#contacts {
+    padding: 20px 0;
+    background-color: #030e22;
+    color: white;
+    margin-top: 30px;
+    
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contacts__content {
+    text-align: center;
+    width: 320px;
+}
+
+/* media-запросы */
+
+@media screen and (width <= 720px) {
+    .top {
+        margin-left: 0;
+        right: 0;
+        margin-right: 20px;
+    }
+    
+    .container {
+        width: 320px;
+    }
+
+    .brands__img {
+        width: 30%;
+    }
+
+    .brands__img:nth-child(n+4) {
+        display: none;
+    }
+
+    .order {
+        flex-direction: column;
+        padding-top: 20px;
+        overflow: visible;
+    }
+
+    .order__img,
+    .order__name {
+        margin-left: 0;
+    }
+
+    .order__name {
+        margin-bottom: 8px;
+    }
+
+    .order__price {
+        margin: 0;
+    }    
+
+    iframe {
+        width: 80%;
+    }
+
+    .flex {
+        justify-content: center;
+    }
+
+    
+}
+
+
+
+@media screen and (width > 720px) {
+    .container {
+        width: 640px;
+    }    
+}
+
+@media screen and (width > 1100px) {
+    .container {
+        width: 960px;
+    } 
+    
+    iframe {
+        width: 640px;
+    }
+}
+
+@media screen and (width > 1500px) {
+    .container {
+        width: 1280px;
+    }
+    
+    iframe {
+        width: 960px;
+    }
+}

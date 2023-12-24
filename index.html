@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="simple-adaptive-slider.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a class="top" href="#"></a>
+    <section class="main">
+        <div class="phone_absolute">
+            
+            
+            <a class="link" href="#contacts">Контакты</a>
+            <br>
+            <a class="phone" href="tel:+375222600080">+375 (222) 60-00-80</a>
+        </div>
+        <div class="center">
+            <h1 class="main__title">всё для монтажа</h1>
+            <p class="main__subtitle">Идеи для дома и офиса</p>
+            <a class="main__link dark" href="#catalog">Перейти в каталог</a>
+        </div>
+        <!-- Разметка слайдера (html код) -->
+        <div class="itcss">
+            <div class="itcss__wrapper">
+                <div class="itcss__items">
+                    <div class="itcss__item first">
+                        <!-- Контент 1 слайда -->
+                    </div>
+                    <div class="itcss__item second">
+                        <!-- Контент 2 слайда -->
+                    </div>
+                    <div class="itcss__item third">
+                        <!-- Контент 3 слайда -->
+                    </div>
+                </div>
+            </div>
+            <!-- Стрелки для перехода к предыдущему и следующему слайду -->
+            <a class="itcss__control itcss__control_prev" href="#" role="button" data-slide="prev"></a>
+            <a class="itcss__control itcss__control_next" href="#" role="button" data-slide="next"></a>
+        </div>
+    </section>
+    <div class="container">
+        <section class="brands">
+            <img class="brands__img" src="img/brand-logo/twt.png" alt="">
+            <img class="brands__img" src="img/brand-logo/accordtec.png" alt="">
+            <img class="brands__img" src="img/brand-logo/ekf.png" alt="">
+            <img class="brands__img" src="img/brand-logo/varta.jpg" alt="">
+            <img class="brands__img" src="img/brand-logo/rexant.jpg" alt="">
+            <img class="brands__img" src="img/brand-logo/rk.png" alt="">
+        </section>
+        <section id="catalog">
+            <h1 class="title">каталог</h1>
+            <div class="holder">
+                <a href="#cart">
+                    <div class="cart-div dark"><img src="img/cart.png" alt=""></div>
+                </a>
+            </div>
+            <div class="flex-container">
+                <div class="card">
+                    <div class="card__bg card_00"></div>
+                    <div class="card__info">
+                        <h4>Карта ТК4100</h4>
+                        <p>1.50 BYN</p>
+                        <button value="0">В корзину</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__bg card_01"></div>
+                    <div class="card__info">
+                        <h4>Карта Mifare</h4>
+                        <p>1.50 BYN</p>
+                        <button value="1">В корзину</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__bg card_02"></div>
+                    <div class="card__info">
+                        <h4>Брелок ТК4100</h4>
+                        <p>1.50 BYN</p>
+                        <button value="2">В корзину</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__bg card_03"></div>
+                    <div class="card__info">
+                        <h4>Колпачёк RJ-45</h4>
+                        <p>0.30 BYN</p>
+                        <button value="3">В корзину</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__bg card_04"></div>
+                    <div class="card__info">
+                        <h4>Коннектор RJ-45</h4>
+                        <p>0.30 BYN</p>
+                        <button value="4">В корзину</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__bg card_05"></div>
+                    <div class="card__info">
+                        <h4>F-разъём</h4>
+                        <p>0.80 BYN</p>
+                        <button value="5">В корзину</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__bg card_06"></div>
+                    <div class="card__info">
+                        <h4>Батарейка АА</h4>
+                        <p>1.00 BYN</p>
+                        <button value="6">В корзину</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__bg card_07"></div>
+                    <div class="card__info">
+                        <h4>Изолента</h4>
+                        <p>1.00 BYN</p>
+                        <button value="7">В корзину</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="cart"></section>
+        
+    </div>
+    <section id="contacts">
+        <div class="container flex">
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A6832ed9c71168bad7a5872dbace606aefbba1c48e504f24b49e13731cf428410&amp;source=constructor" width="320" height="320" frameborder="0"></iframe>
+            <div class="contacts__content">
+                <h3>контакты</h3>
+                <h4>туп "линскан"</h4>
+                <p>УНП 790744111</p>
+                <p>г.Могилёв</p>
+                <p>б-р Непокоренных 37</p>
+                <p>офис 1</p>
+                <a class="phone" href="tel:+375222600080">+375 (222) 60-00-80</a>
+            </div>
+        </div>
+    </section>
+    <script src="app.js"></script>
+    <script defer src="simple-adaptive-slider.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // инициализация слайдера
+            new ItcSimpleSlider('.itcss', {
+                loop: true,
+                autoplay: true,
+                interval: 3500,
+                swipe: true,
+            });
+        });
+    </script>
+</body>
+
+</html>
