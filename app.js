@@ -44,7 +44,10 @@ function clearMyChoiсe() {
 }
 
 function showMeTheCart() {
-    binDivAnchor.classList.remove("disabled");
+    if (cartSet.size) {
+        binDivAnchor.classList.remove("disabled");
+    };
+    
     let text = "";
     let rubli = 0;
     let kopeyki = 0;
