@@ -15,19 +15,36 @@ let cart = document.querySelector("#cart");
 let flexContainer = document.querySelector(".flex-container");
 let buttonArray = flexContainer.querySelectorAll("button");
 let cartDiv = document.querySelector(".cart-div");
+let binDivAnchor = document.querySelector("a.disabled");
+let binDiv = document.querySelector(".bin-div");
 
 for (let element of buttonArray)
     element.addEventListener("click", addMe);
 cartDiv.addEventListener("click", showMeTheCart);
+binDiv.addEventListener("click", clearMyChoiсe);
 
 
 function addMe() {
     cartSet.add(this.value);
     this.innerHTML = "ВЫБРАНО!";
     this.classList.add("selected");
+    binDivAnchor.classList.remove("disabled");
+    binDiv.classList.add("grey");
+}
+
+function clearMyChoiсe() {
+    cartSet.clear();
+    cart.innerHTML = "";
+    for (let element of buttonArray) {
+        element.innerHTML = "В корзину";
+        element.classList.remove("selected");
+    };
+    binDivAnchor.classList.add("disabled");
+    binDiv.classList.remove("grey"); 
 }
 
 function showMeTheCart() {
+    binDivAnchor.classList.remove("disabled");
     let text = "";
     let rubli = 0;
     let kopeyki = 0;
@@ -49,7 +66,7 @@ function showMeTheCart() {
     }
     text+=`<h2 class="total">итого ${getTotal(rubli, kopeyki)} byn</h2>`;
 
-    cart.innerHTML = `<h1 class="title">ваш заказ</h1><div class="holder"><a href="#catalog"><div class="home-div dark"><img src="img/home.png" alt=""></div></a></div>${text}`;
+    cart.innerHTML = `<h1 class="title">ваш заказ</h1><div class="holder holder_home"><a href="#catalog"><div class="home-div dark"><img src="img/home.png" alt=""></div></a></div>${text}`;
 
     let homeDiv = cart.querySelector(".home-div");
     

@@ -12,6 +12,10 @@ a {
     text-decoration: none;
 }
 
+a.disabled {
+    pointer-events: none;
+}
+
 h1, h2, h3, h4 {
     text-transform: uppercase;
 }
@@ -120,17 +124,6 @@ h1, h2, h3, h4 {
     text-align: center;
 }
 
-
-.lesson__title::before {
-    
-    content: "";
-    width: 45px;
-    height: 50px;
-    display: inline-block;
-    background-image: url(img/html5-logo.png);
-    background-size: cover;
-}
-
 .first {
     background-image: url(img/i.webp);
     background-size: cover;
@@ -155,6 +148,10 @@ h1, h2, h3, h4 {
     height: 100vh;
 }
 
+#catalog {
+    margin-bottom: 40px;
+}
+
 .title {
     letter-spacing: 2px;
     text-align: center;
@@ -171,6 +168,8 @@ h1, h2, h3, h4 {
     color: transparent;
 }
 
+
+
 /*Держатель кнопок: "Перейти в корзину", "Вернуться в каталог (домой)" */
 
 .holder { 
@@ -179,10 +178,32 @@ h1, h2, h3, h4 {
     border-bottom: 2px solid #e0e0e0;
     padding: 10px;
     display: flex;
+    justify-content: space-between;
+}
+
+.holder_home {
     justify-content: flex-end;
 }
 
-/*Div-блоки кнопок: "Перейти в корзину", "Вернуться в каталог (домой)" */
+/*Div-блоки кнопок: "Очистить выбор" (bin-div), "Перейти в корзину" (cart-div), "Вернуться в каталог (home-div,домой)" */
+
+.bin__img {
+    height: 50px;
+    width: 50px;
+}
+
+
+.bin-div {
+    background-color: #C2C1C6;
+    width: 120px;
+    text-align: center;
+    border-radius: 15px;
+    border: 2px solid black;
+}
+
+.grey {
+    background-color: grey;
+}
 
 .cart-div,
 .home-div {
@@ -317,13 +338,44 @@ h1, h2, h3, h4 {
 
 /* конец CSS-классов, относящихся к оформлению строк заказа на сайте*/
 
+/* Оформление section#grant*/
+
+.grant {
+    background-color: #f9f9fa;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.grant__title::after {
+    content: '';
+    height: 2px;
+    background-color: #e0e0e0;
+    margin-top: 20px;
+    display: block;
+}
+
+.grant__holder {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.grant__row {
+    display: flex;
+    align-items: center;
+    width:24%;
+}
+
+.grant__row_img {
+    margin-right: 10px;
+}
+
 /* Оформление section#contacts*/
 
 #contacts {
     padding: 20px 0;
     background-color: #030e22;
     color: white;
-    margin-top: 30px;
     
 }
 
@@ -377,7 +429,16 @@ h1, h2, h3, h4 {
 
     .order__price {
         margin: 0;
-    }    
+    }
+    
+    .grant__row {
+        width:90%;
+    }
+
+    .grant__row:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
 
     iframe {
         width: 80%;
@@ -392,10 +453,24 @@ h1, h2, h3, h4 {
 
 
 
-@media screen and (width > 720px) {
+@media screen and (width > 720px) and (width <= 1100px) {
     .container {
         width: 640px;
-    }    
+    } 
+    
+    .center {
+        padding-left: 0;
+        left: calc(50% - 120px);
+    }
+
+    .grant__row {
+        width:48%;
+    }
+
+    .grant__row:first-child,
+    .grant__row:nth-child(2) {
+        margin-bottom: 10px;
+    }
 }
 
 @media screen and (width > 1100px) {
@@ -405,6 +480,11 @@ h1, h2, h3, h4 {
     
     iframe {
         width: 640px;
+    }
+
+    .center {
+        padding-left: 0;
+        left: calc(50% - 120px);
     }
 }
 
@@ -416,4 +496,32 @@ h1, h2, h3, h4 {
     iframe {
         width: 960px;
     }
+
+    .center {
+        padding-left: 0;
+        left: calc(50% - 240px);
+        top: calc(50% - 93px);
+    }
+
+    .main__title {
+        font-size: 48px;
+    }
+    .main__subtitle {
+        font-size: 32px;
+    }
+
+    .main__link {
+        font-size: 32px;
+    }
+
+    .phone_absolute a {
+        font-size: 32px;
+    }
+
+    .phone_absolute .phone::before {
+        content: "";
+        width: 30px;
+        height: 30px;
+    }
+
 }
